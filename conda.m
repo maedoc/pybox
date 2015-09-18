@@ -2,8 +2,8 @@ function conda(cmd, varargin)
 
     persistent conda_path conda_env conda_py
     
-    
     switch cmd
+        % TODO this prevents true conda install from working.
         case 'install'
             install(varargin{:});
         case 'use'
