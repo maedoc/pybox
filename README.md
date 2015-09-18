@@ -45,8 +45,8 @@ MATLAB automatically exposes most stuff on Python objects in the console
 and the variable inspector, but it's useful to have the results as a MATLAB
 array:
 
-```
->> np2m(py.numpy.arange(8).reshape(2, 4))
+```matlab
+>>> np2m(py.numpy.arange(8).reshape(2, 4))
 
 ans =
 
