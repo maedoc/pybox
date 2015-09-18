@@ -62,7 +62,7 @@ ans =
      1     5
      2     6
      3     7
-```np2m(py.numpy.arange(8).reshape(2, 4))
+```
 
 Shapes are handled correctly.
 
