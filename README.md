@@ -3,8 +3,6 @@
 This is another toolbox providing access to Python from MATLAB, with the
 goals of building on MATLAB's new support for Python.
 
-## conda
-
 Miniconda from Continuum is used for setting up environments with prebuilt
 packages, in cross platform fashion (or at least as much as conda is) 
 especially onerous for scientific libraries.
@@ -42,3 +40,20 @@ ans =
     [ 0.32473666  0.59561982  0.77702851]
 
 ```
+
+MATLAB automatically exposes most stuff on Python objects in the console
+and the variable inspector, but it's useful to have the results as a MATLAB
+array:
+
+```
+>> np2m(py.numpy.arange(8).reshape(2, 4))
+
+ans =
+
+     0     4
+     1     5
+     2     6
+     3     7
+```
+
+Shapes are handled correctly.
