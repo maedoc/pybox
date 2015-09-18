@@ -10,11 +10,19 @@ especially onerous for scientific libraries.
 For example
 
 ```matlab
->>> conda install py  % setup conda installation (dl if needed)
+>>> pybox install_conda  % setup conda installation (dl if needed)
 ... 
->>> conda use py  % tell pybox where is conda installation
->>> conda create -n foo numpy   % make an environment with numpy
-...
+>>> pybox install numpy pyqt % install some packages
+... 
+>>> pybox use               % tell MATLAB to use our python install
+>>> py.sys.executable
+
+ans = 
+
+  Python str with no properties.
+
+    /home/duke/MATLAB/pybox/conda/bin/python
+
 >>> py.numpy.random.rand(3)    % make array of random numbers
 
 ans = 
@@ -54,6 +62,11 @@ ans =
      1     5
      2     6
      3     7
-```
+```np2m(py.numpy.arange(8).reshape(2, 4))
 
 Shapes are handled correctly.
+
+Usuability is not bad, see how MATLAB even can make intelligent corrections
+(here I misspelled `QApplication`)
+
+![pyqtshot](pyqtshot.png)
