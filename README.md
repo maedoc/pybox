@@ -3,17 +3,27 @@
 This is another toolbox providing access to Python from MATLAB, with the
 goals of building on MATLAB's new support for Python.
 
-Miniconda from Continuum is used for setting up environments with prebuilt
-packages, in cross platform fashion (or at least as much as conda is) 
-especially onerous for scientific libraries.
+## Get started
 
-For example
+[Download!](https://github.com/maedoc/pybox/archive/master.zip) and put
+the folder on your MATLAB path.
 
+Now, setup the Python installation:
 ```matlab
 >>> pybox install_conda  % setup conda installation (dl if needed)
 ... 
->>> pybox install numpy pyqt % install some packages
+```
+
+and install some packages
+
+```matlab
+>>> pybox install numpy scipy pyqt % install some packages
 ... 
+```
+
+Finally, to tell MATLAB to use this Python
+
+```matlab
 >>> pybox use               % tell MATLAB to use our python install
 >>> py.sys.executable
 
@@ -23,21 +33,21 @@ ans =
 
     /home/duke/MATLAB/pybox/conda/bin/python
 
->>> py.numpy.random.rand(3)    % make array of random numbers
+```
+
+## Examples
+
+Make array of random numbers
+
+```matlab
+>>> py.numpy.random.rand(3)
 
 ans = 
 
   Python ndarray with properties:
 
            T: [1x1 py.numpy.ndarray]
-        base: [1x1 py.NoneType]
-      ctypes: [1x1 py.numpy.core._internal._ctypes]
-        data: [1x24 py.buffer]
-       dtype: [1x1 py.numpy.dtype]
-       flags: [1x1 py.numpy.flagsobj]
-        flat: [1x1 py.numpy.flatiter]
-        imag: [1x1 py.numpy.ndarray]
-    itemsize: 8
+...
       nbytes: 24
         ndim: 1
         real: [1x1 py.numpy.ndarray]
@@ -70,3 +80,10 @@ Usuability is not bad, see how MATLAB even can make intelligent corrections
 (here I misspelled `QApplication`)
 
 ![pyqtshot](pyqtshot.png)
+
+## Credits
+
+Miniconda from Continuum is used for setting up environments with prebuilt
+packages, in cross platform fashion (or at least as much as conda is) 
+especially onerous for scientific libraries.
+
