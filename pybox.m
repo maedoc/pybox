@@ -44,6 +44,8 @@ function install(conda_prefix, py3)
     mc = 'Miniconda';
     if py3
         mc = [mc '3'];
+    else
+        mc = [mc '2'];
     end
     inst = sprintf('%s-latest-%s', mc, plat_map.(computer));
     inst_path = fullfile(conda_prefix, inst);
